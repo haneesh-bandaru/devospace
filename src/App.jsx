@@ -3,7 +3,14 @@ import {
   Parallax,
   ParallaxBanner,
 } from "react-scroll-parallax";
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  ChevronRight,
+  Send,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -15,7 +22,8 @@ export default function ModernHomepage() {
         <ParallaxBanner
           layers={[
             {
-              image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80",
+              image:
+                "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80",
               speed: -20,
             },
             {
@@ -247,7 +255,8 @@ export default function ModernHomepage() {
         <ParallaxBanner
           layers={[
             {
-              image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1920&q=80",
+              image:
+                "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1920&q=80",
               speed: -10,
             },
             {
@@ -270,98 +279,89 @@ export default function ModernHomepage() {
         />
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-white py-16">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Devospace.tech</h3>
-                <p>Innovate. Build. Learn.</p>
+        <footer className="bg-gradient-to-b from-gray-900 to-black text-white py-16 relative overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12">
+              <div className="md:col-span-4">
+                <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+                  Devospace.tech
+                </h3>
+                <p className="text-gray-300 mb-6">Innovate. Build. Learn.</p>
+                <p className="text-sm text-gray-400">
+                  Launching dreams into the digital cosmos, one line of code at
+                  a time.
+                </p>
               </div>
-              <div>
-                <h4 className="text-lg font-semibold mb-4">Navigation</h4>
+              <div className="md:col-span-2">
+                <h4 className="text-lg font-semibold mb-4 text-purple-300">
+                  Navigation
+                </h4>
                 <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="#"
-                      className="hover:text-purple-400 transition-colors duration-300"
-                    >
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="hover:text-purple-400 transition-colors duration-300"
-                    >
-                      Pricing
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="hover:text-purple-400 transition-colors duration-300"
-                    >
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="hover:text-purple-400 transition-colors duration-300"
-                    >
-                      Contact
-                    </a>
-                  </li>
+                  {["Services", "Pricing", "About", "Contact"].map((item) => (
+                    <li key={item}>
+                      <a
+                        href="#"
+                        className="text-gray-400 hover:text-purple-400 transition-colors duration-300 flex items-center group"
+                      >
+                        <ChevronRight className="h-4 w-4 mr-2 transform group-hover:translate-x-1 transition-transform duration-300" />
+                        {item}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <div>
-                <h4 className="text-lg font-semibold mb-4">Connect</h4>
+              <div className="md:col-span-3">
+                <h4 className="text-lg font-semibold mb-4 text-purple-300">
+                  Connect
+                </h4>
                 <div className="flex space-x-4">
-                  <a
-                    href="#"
-                    className="hover:text-purple-400 transition-colors duration-300"
-                  >
-                    <Facebook size={24} />
-                  </a>
-                  <a
-                    href="#"
-                    className="hover:text-purple-400 transition-colors duration-300"
-                  >
-                    <Twitter size={24} />
-                  </a>
-                  <a
-                    href="#"
-                    className="hover:text-purple-400 transition-colors duration-300"
-                  >
-                    <Linkedin size={24} />
-                  </a>
-                  <a
-                    href="#"
-                    className="hover:text-purple-400 transition-colors duration-300"
-                  >
-                    <Instagram size={24} />
-                  </a>
+                  {[Facebook, Twitter, Linkedin, Instagram].map(
+                    (Icon, index) => (
+                      <a
+                        key={index}
+                        href="#"
+                        className="bg-gray-800 p-2 rounded-full hover:bg-purple-600 transition-colors duration-300"
+                        aria-label={`Connect on ${Icon.name}`}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </a>
+                    )
+                  )}
                 </div>
               </div>
-              <div>
-                <h4 className="text-lg font-semibold mb-4">Stay in Orbit</h4>
+              <div className="md:col-span-3">
+                <h4 className="text-lg font-semibold mb-4 text-purple-300">
+                  Stay in Orbit
+                </h4>
                 <form className="flex flex-col space-y-3">
-                  <Input
-                    type="email"
-                    placeholder="Your email"
-                    className="bg-gray-800 text-white border-gray-700"
-                  />
-                  <Button
-                    type="submit"
-                    className="bg-purple-600 hover:bg-purple-700 text-white rounded-md transition-all duration-300 ease-in-out transform hover:scale-105"
-                  >
-                    Subscribe
-                  </Button>
+                  <div className="relative">
+                    <Input
+                      type="email"
+                      placeholder="Your email"
+                      className="bg-gray-800 text-white border-gray-700 pr-10 focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                    />
+                    <Button
+                      type="submit"
+                      className="absolute right-1 top-1 bg-purple-600 hover:bg-purple-700 text-white p-1 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105"
+                    >
+                      <Send className="h-4 w-4" />
+                    </Button>
+                  </div>
+                  <p className="text-xs text-gray-400">
+                    Join our newsletter for cosmic updates and special offers.
+                  </p>
                 </form>
               </div>
             </div>
-            <div className="mt-12 pt-8 border-t border-gray-800 text-center">
-              <p>&copy; 2023 Devospace.tech. All rights reserved.</p>
+            <div className="border-t border-gray-800 pt-8 text-center">
+              <p className="text-sm text-gray-400">
+                &copy; {new Date().getFullYear()} Devospace.tech. All rights
+                reserved.
+              </p>
             </div>
           </div>
         </footer>
