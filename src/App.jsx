@@ -73,7 +73,7 @@ export default function ModernHomepage() {
                   Galactic Digital Solutions
                 </h3>
               </Parallax>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 ">
                 {[
                   {
                     name: "Web Nebulae",
@@ -95,7 +95,7 @@ export default function ModernHomepage() {
                   <Parallax
                     key={index}
                     translateY={[20, -20]}
-                    className="bg-white rounded-lg shadow-xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                    className="bg-white rounded-lg shadow-xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:cursor-pointer"
                   >
                     <img
                       src={product.img}
@@ -141,7 +141,7 @@ export default function ModernHomepage() {
                   <Parallax
                     key={index}
                     translateY={[10, -10]}
-                    className="bg-white rounded-lg shadow-xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                    className="bg-white rounded-lg shadow-xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:cursor-pointer"
                   >
                     <img
                       src={className.img}
