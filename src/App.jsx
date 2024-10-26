@@ -346,7 +346,7 @@ export default function ModernHomepage() {
                     />
                     <Button
                       type="submit"
-                      className="absolute right-1 top-1 bg-purple-600 hover:bg-purple-700 text-white p-1 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105"
+                      className="absolute right-1 top-1 bg-purple-600 h-8 w-8 hover:bg-purple-700 text-white p-1 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105"
                     >
                       <Send className="h-4 w-4" />
                     </Button>
